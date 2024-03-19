@@ -1,6 +1,6 @@
 a, b, c, d = map(int, input().split())
 
-only_multiplies = filter(lambda x: (x%c ==0 and x%d ==0), list(range(a, b + 1)))
+only_multiplies = filter(lambda x: (x % c == 0 and x % d == 0), list(range(a, b + 1)))
 
 result = 0
 
