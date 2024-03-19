@@ -1,6 +1,5 @@
 line = list(input())
-i = int(input())
-j = int(input())
+i, j = map(int, input().split())
 
 
 def filter_is_upper(letter):
