@@ -1,8 +1,8 @@
-import functools
+import json
 
-a, b, c = map(int, input().split())
 
-only_suitable = filter(lambda x: (x % c == 0 and (x**0.5).is_integer() is True), list(range(a, b + 1)))
-
-result = functools.reduce(lambda x, y: x*y, list(only_suitable))
-print(result)
+with open("input.txt", "r", encoding='utf8') as f:
+    data = json.load(f)
+    processed_data = list(data.items())
+    processed_data.sort(key=lambda x: x[1], reverse=True)
+    print(processed_data)
