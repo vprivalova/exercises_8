@@ -11,15 +11,18 @@ def to_format(format='json'):
             resulting = func(*args)
             if format == 'json':
                 return json.dumps(resulting, indent=3)
+
             elif format == 'xml':
                 root = ET.Element(resulting[0])
                 info = ET.SubElement(root, 'info')
                 data = ' '.join(resulting[1])
                 info.text = data
-                xml_str = ET.tostring(root, encoding="utf-8", method="xml")
+                xml_str = ET.tostring(root, encoding="utf-8")
                 return xml_str
+
             elif format == 'yaml':
                 return yaml.dump(resulting)
+
         return wrapped
     return decorator
 

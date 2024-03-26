@@ -10,6 +10,7 @@ def runtime_restriction(runtime, n, seconds):
         @functools.wraps(func)
         def wrapped(num):
             nonlocal counter
+            nonlocal timing
             current = time.time()
             timing.append(current)
 
@@ -39,7 +40,7 @@ def factorial(num):
     return result
 
 
-print(factorial(14))
+print(factorial(144))
 print(factorial(3))
 print(factorial(9))
 print(factorial(8))
